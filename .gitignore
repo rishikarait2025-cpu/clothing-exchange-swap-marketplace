@@ -1,0 +1,20 @@
+# Python virtual environment
+env/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Django local database
+db.sqlite3
+
+# Environment variables
+.env
+
+# React dependencies
+frontend/node_modules/
+
+# React production build
+frontend/build/
+
+media/
