@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import API_BASE_URL from "../api";
 import { useNavigate } from "react-router-dom";
 
 function Register() {
@@ -13,7 +14,7 @@ function Register() {
         try {
 
             const response = await axios.post(
-                "http://127.0.0.1:8000/api/register/",
+                `${API_BASE_URL}/api/register/`,
                 {
                     username,
                     email,
@@ -23,11 +24,16 @@ function Register() {
 
             alert(response.data.message);
 
-        } catch (error) {
+        // } catch (error) {
 
-            console.log(error);
+        //     console.log(error);
 
-        }
+        // }
+         } catch (error) {
+    console.log("REGISTRATION ERROR:", error);
+    console.log("RESPONSE:", error.response);
+    alert(error.response?.data?.error || "Registration failed");
+}
 
     };
 
